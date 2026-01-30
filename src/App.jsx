@@ -40,7 +40,7 @@ function App() {
         setIsScreamer(true);
         // Play LOUD scream using Web Audio API (5x amplified)
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        fetch('/scream.mp3')
+        fetch(`${import.meta.env.BASE_URL}scream.mp3`)
           .then(response => response.arrayBuffer())
           .then(buffer => audioContext.decodeAudioData(buffer))
           .then(audioBuffer => {
@@ -100,7 +100,7 @@ function App() {
       {/* Video Background */}
       <video
         key={isHorror ? 'horror' : 'normal'}
-        src={isHorror ? "/horror-bg.mp4" : "/normal-bg.mp4"}
+        src={isHorror ? `${import.meta.env.BASE_URL}horror-bg.mp4` : `${import.meta.env.BASE_URL}normal-bg.mp4`}
         autoPlay
         loop
         muted
@@ -133,7 +133,7 @@ function App() {
         {/* Horror Mode Audio - Native HTML5 Audio */}
         {isHorror && (
           <audio
-            src="/horror.mp3"
+            src={`${import.meta.env.BASE_URL}horror.mp3`}
             autoPlay
             loop
           />
@@ -199,7 +199,7 @@ function App() {
             }} />
             {/* Screamer Image */}
             <img
-              src="/screamer.jpg"
+              src={`${import.meta.env.BASE_URL}screamer.jpg`}
               alt="AAAAA"
               style={{
                 maxWidth: '90%',
