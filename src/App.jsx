@@ -105,26 +105,16 @@ function App() {
         loop
         muted
         playsInline
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          objectFit: 'cover',
-          zIndex: 0
-        }}
+        className="fixed-bg"
       />
       {/* Dark Overlay */}
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        zIndex: 1
-      }} />
+      <div
+        className="fixed-bg"
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          zIndex: 1
+        }}
+      />
 
       {/* Content */}
       <div style={{ position: 'relative', zIndex: 10, minHeight: '100vh', color: 'white' }}>
