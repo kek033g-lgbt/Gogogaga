@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Hero } from './components/Hero';
 import { FeatureCard } from './components/FeatureCard';
+import { ScreamerModal } from './components/ScreamerModal';
 import { Zap, Shield, Globe, Cpu } from 'lucide-react';
 
 function App() {
@@ -131,24 +132,11 @@ function App() {
 
         {/* Jumpscare Screamer */}
         {/* Jumpscare Screamer - Modal Style */}
-        {isScreamer && (
-          <div className="horror-modal-overlay">
-            <div className="horror-modal">
-              <div className="horror-header">
-                <span>⚠️ FATAL ERROR ⚠️</span>
-                <span>X</span>
-              </div>
-              <div className="horror-body">
-                <img
-                  src={`${import.meta.env.BASE_URL}screamer.jpg`}
-                  alt="SCREAMER"
-                  className="horror-img"
-                />
-                <p className="horror-text">IT SEES YOU</p>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Jumpscare Screamer - Modal Style */}
+        <ScreamerModal
+          isOpen={isScreamer}
+          onClose={() => setIsScreamer(false)}
+        />
 
         {/* Fullscreen Rick Roll Overlay */}
         {isRickRolled && (
