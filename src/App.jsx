@@ -130,75 +130,23 @@ function App() {
         )}
 
         {/* Jumpscare Screamer */}
+        {/* Jumpscare Screamer - Modal Style */}
         {isScreamer && (
-          <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            zIndex: 99999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#1a0000'
-          }}>
-            {/* Blood Splatters */}
-            <div style={{
-              position: 'absolute',
-              top: '10%',
-              left: '5%',
-              width: '150px',
-              height: '150px',
-              background: 'radial-gradient(ellipse, #8B0000 0%, #5a0000 40%, transparent 70%)',
-              borderRadius: '50% 40% 60% 30%',
-              transform: 'rotate(-20deg)',
-              filter: 'blur(2px)'
-            }} />
-            <div style={{
-              position: 'absolute',
-              bottom: '15%',
-              right: '10%',
-              width: '200px',
-              height: '180px',
-              background: 'radial-gradient(ellipse, #8B0000 0%, #5a0000 40%, transparent 70%)',
-              borderRadius: '40% 60% 30% 50%',
-              transform: 'rotate(30deg)',
-              filter: 'blur(3px)'
-            }} />
-            <div style={{
-              position: 'absolute',
-              top: '50%',
-              left: '2%',
-              width: '100px',
-              height: '200px',
-              background: 'linear-gradient(180deg, #8B0000 0%, transparent 100%)',
-              borderRadius: '50%',
-              transform: 'rotate(-10deg)',
-              filter: 'blur(4px)'
-            }} />
-            <div style={{
-              position: 'absolute',
-              top: '5%',
-              right: '15%',
-              width: '120px',
-              height: '120px',
-              background: 'radial-gradient(circle, #a00000 0%, #5a0000 50%, transparent 70%)',
-              borderRadius: '50%',
-              filter: 'blur(2px)'
-            }} />
-            {/* Screamer Image */}
-            <img
-              src={`${import.meta.env.BASE_URL}screamer.jpg`}
-              alt="AAAAA"
-              style={{
-                maxWidth: '90%',
-                maxHeight: '90%',
-                objectFit: 'contain',
-                zIndex: 1,
-                boxShadow: '0 0 100px rgba(139, 0, 0, 0.8)'
-              }}
-            />
+          <div className="horror-modal-overlay">
+            <div className="horror-modal">
+              <div className="horror-header">
+                <span>⚠️ FATAL ERROR ⚠️</span>
+                <span>X</span>
+              </div>
+              <div className="horror-body">
+                <img
+                  src={`${import.meta.env.BASE_URL}screamer.jpg`}
+                  alt="SCREAMER"
+                  className="horror-img"
+                />
+                <p className="horror-text">IT SEES YOU</p>
+              </div>
+            </div>
           </div>
         )}
 
