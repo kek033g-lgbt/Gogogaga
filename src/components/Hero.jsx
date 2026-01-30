@@ -41,16 +41,16 @@ export const Hero = ({ toggleHorror, isHorror, toggleRickRoll }) => {
             <span>{isHorror ? "RUN WHILE YOU CAN" : "Next Generation Experience"}</span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          <h1 className="hero-title tracking-tight mb-6">
             {isHorror ? "DEATH IS" : "Future is"} <br />
             <span className="text-gradient">{isHorror ? "COMING FOR YOU" : "Unknown & Beautiful"}</span>
           </h1>
 
-          <p className="text-xl text-dim max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="hero-subtitle text-dim mb-10 leading-relaxed">
             {isHorror ? "THERE IS NO ESCAPE. DO NOT LOOK BEHIND YOU." : "Crafting digital experiences that defy expectations. Immersive, responsive, and incredibly fast."}
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
+          <div className="hero-buttons" style={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -102,7 +102,7 @@ export const Hero = ({ toggleHorror, isHorror, toggleRickRoll }) => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-1/4 right-[10%] w-20 h-20 glass-panel rounded-2xl -z-10 rotate-12 bg-gradient-to-br from-white/10 to-transparent"
+        className="decorative-element absolute top-1/4 right-[10%] w-20 h-20 glass-panel rounded-2xl -z-10 rotate-12 bg-gradient-to-br from-white/10 to-transparent"
       />
       <motion.div
         animate={{
@@ -114,7 +114,7 @@ export const Hero = ({ toggleHorror, isHorror, toggleRickRoll }) => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-1/4 left-[10%] w-32 h-32 glass-panel rounded-full -z-10 -rotate-12 bg-gradient-to-tr from-purple-500/10 to-transparent"
+        className="decorative-element absolute bottom-1/4 left-[10%] w-32 h-32 glass-panel rounded-full -z-10 -rotate-12 bg-gradient-to-tr from-purple-500/10 to-transparent"
       />
     </section>
   );

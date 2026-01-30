@@ -257,13 +257,9 @@ function App() {
           </div>
         )}
 
-        <section style={{ padding: '8rem 0', position: 'relative' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '1.5rem'
-            }}>
+        <section className="section-padding" style={{ position: 'relative' }}>
+          <div className="container">
+            <div className="features-grid">
               {features.map((feature, index) => (
                 <FeatureCard
                   key={index}
