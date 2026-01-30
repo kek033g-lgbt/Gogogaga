@@ -133,13 +133,21 @@ body.horror-mode .text-gradient {
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  /* Force hide horizontal overflow */
   background-color: var(--bg-dark);
+  width: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  /* Force hide horizontal overflow */
 }
 
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* ========================================
@@ -239,6 +247,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  /* Changed from 100vw to prevent scrollbar-induced scrolling */
   height: 100%;
   height: 100dvh;
   /* Modern mobile fix */
@@ -285,6 +294,11 @@ body {
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
+    word-wrap: break-word;
+    /* Ensure long words wrap */
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
 
   .hero-subtitle {
