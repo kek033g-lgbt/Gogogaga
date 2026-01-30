@@ -1,16 +1,129 @@
-# React + Vite
+# 🎃 Gogogaga — Future UI with Horror Mode
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **A modern React landing page with a terrifying twist**
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square&logo=react)
+![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?style=flat-square&logo=vite)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.1-38B2AC?style=flat-square&logo=tailwindcss)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.29-FF0055?style=flat-square&logo=framer)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Описание
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Gogogaga** — это стильный лендинг с футуристичным дизайном, который скрывает в себе **режим хоррора** с пугающими эффектами. Переключите режим одной кнопкой и испытайте на себе атмосферу ужаса!
 
-## Expanding the ESLint configuration
+### 🎯 Особенности
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎬 **Динамические видео-фоны** — разные видео для обычного и хоррор режимов
+- 👻 **Horror Mode** — зловещая музыка, темная атмосфера и кроваво-красные эффекты
+- 💀 **Jumpscares** — скримеры каждые 10 секунд в режиме хоррора с оглушительным криком
+- 🩸 **Эффекты крови** — CSS-анимации брызг крови на экране
+- 🎵 **Web Audio API** — усиленный звук скримера (5x громкости)
+- 🕺 **Rick Roll** — классический пранк одним нажатием
+- ⚡ **Framer Motion** — плавные анимации и переходы
+- 🎨 **Lucide Icons** — современные иконки
+
+---
+
+## 🚀 Быстрый старт
+
+### Требования
+
+- **Node.js** 18+ 
+- **npm** или **yarn**
+
+### Установка
+
+```bash
+# Клонируйте репозиторий
+git clone <repository-url>
+cd Gogogaga
+
+# Установите зависимости
+npm install
+
+# Запустите dev сервер
+npm run dev
+```
+
+Приложение будет доступно по адресу `http://localhost:5173`
+
+---
+
+## 📁 Структура проекта
+
+```
+Gogogaga/
+├── public/
+│   ├── background.jpg      # Фоновое изображение
+│   ├── horror-bg.mp4       # Видео-фон для хоррор режима
+│   ├── normal-bg.mp4       # Видео-фон для обычного режима
+│   ├── horror.mp3          # Фоновая музыка хоррора
+│   ├── scream.mp3          # Звук скримера
+│   ├── screamer.jpg        # Изображение скримера
+│   └── vite.svg            # Иконка Vite
+├── src/
+│   ├── components/
+│   │   ├── Hero.jsx        # Главный герой-блок
+│   │   └── FeatureCard.jsx # Карточки фич
+│   ├── App.jsx             # Основной компонент
+│   ├── App.css             # Стили приложения
+│   ├── index.css           # Глобальные стили
+│   └── main.jsx            # Точка входа
+├── index.html              # HTML шаблон
+├── vite.config.js          # Конфигурация Vite
+├── eslint.config.js        # Конфигурация ESLint
+└── package.json            # Зависимости проекта
+```
+
+---
+
+## 🛠️ Скрипты
+
+| Команда | Описание |
+|---------|----------|
+| `npm run dev` | Запустить dev сервер с HMR |
+| `npm run build` | Собрать production билд |
+| `npm run preview` | Предпросмотр production билда |
+| `npm run lint` | Запустить ESLint |
+
+---
+
+## 🎮 Как использовать
+
+1. **Обычный режим** — наслаждайтесь красивым футуристичным лендингом
+2. **Horror Mode** 🎃 — нажмите кнопку "Horror Mode" для активации:
+   - Видео-фон сменится на пугающий
+   - Зазвучит жуткая музыка
+   - Каждые 10 секунд — СКРИМЕР! 💀
+3. **Rick Roll** 🕺 — нажмите для классического пранка
+
+> ⚠️ **Предупреждение:** Horror Mode содержит громкие звуки и пугающие изображения!
+
+---
+
+## 🔧 Технологии
+
+- **React 19.2** — библиотека для создания UI
+- **Vite 7.2** — быстрый сборщик и dev-сервер
+- **Tailwind CSS 4.1** — utility-first CSS фреймворк
+- **Framer Motion 12.29** — библиотека анимаций
+- **Lucide React** — иконки
+- **Web Audio API** — работа со звуком
+
+---
+
+## 📝 Лицензия
+
+MIT License © 2026
+
+---
+
+<div align="center">
+
+**Сделано с 💀 и ❤️**
+
+*Не открывайте Horror Mode в тёмной комнате... мы предупреждали.*
+
+</div>
