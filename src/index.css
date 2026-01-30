@@ -10,10 +10,8 @@
 
   /* Brand Colors - Neon Glows */
   --primary: #8b5cf6;
-  /* Violet */
   --primary-glow: rgba(139, 92, 246, 0.5);
   --secondary: #ec4899;
-  /* Pink */
   --secondary-glow: rgba(236, 72, 153, 0.5);
 
   /* Horror Mode Colors */
@@ -42,6 +40,9 @@
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* ========================================
+   HORROR MODE STYLES
+   ======================================== */
 body.horror-mode {
   --bg-dark: var(--horror-bg);
   --primary: var(--horror-red);
@@ -120,7 +121,9 @@ body.horror-mode .text-gradient {
   }
 }
 
-/* Reset & Base */
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
 * {
   margin: 0;
   padding: 0;
@@ -139,8 +142,50 @@ body {
   flex-direction: column;
 }
 
-/* Utilities - wrapped in @layer to work with Tailwind */
-@layer components {
+/* ========================================
+   BASE COMPONENT STYLES (All Devices)
+   ======================================== */
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+}
+
+.text-dim {
+  color: var(--text-dim);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* ========================================
+   DESKTOP STYLES (769px and up)
+   ======================================== */
+@media (min-width: 769px) {
   .container {
     max-width: 1280px;
     margin-left: auto;
@@ -150,102 +195,101 @@ body {
     width: 100%;
   }
 
-  .text-gradient {
-    background: linear-gradient(to right, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
-    border-radius: 1rem;
-  }
-
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #444;
-  }
-
-  /* Feature Cards Grid - Responsive */
   .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+    width: 100%;
   }
 
-  /* Responsive Typography */
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.1;
+    text-align: center;
   }
 
   .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     max-width: 42rem;
     margin: 0 auto;
+    text-align: center;
   }
 
   .section-padding {
-    padding: 4rem 0;
+    padding: 5rem 0;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .decorative-element {
+    display: block;
   }
 }
 
-/* Mobile Responsive Styles */
-@media (max-width: 1024px) {
+/* Tablet - between 769px and 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 3.5rem;
+  }
+}
+
+/* ========================================
+   MOBILE STYLES (768px and below)
+   ======================================== */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    padding: 0 1rem;
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    text-align: center;
   }
 
   .section-padding {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
   }
 
   .glass-panel {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
-  /* Buttons on mobile */
   .hero-buttons {
+    display: flex;
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
@@ -257,8 +301,12 @@ body {
     justify-content: center;
   }
 
-  /* Hide decorative floating elements on mobile */
   .decorative-element {
-    display: none;
+    display: none !important;
+  }
+
+  /* Mobile footer */
+  footer {
+    padding: 2rem 0 !important;
   }
 }
