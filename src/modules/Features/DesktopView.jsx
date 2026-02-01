@@ -60,8 +60,7 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 20 }}
                             transition={{ duration: 0.3 }}
-                            className="relative w-full max-w-4xl bg-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl z-10 border border-white/10"
-                            style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)' }}
+                            className="relative w-full max-w-4xl bg-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl z-10 border border-white/10 flex"
                         >
                             <button
                                 onClick={() => setSelectedFeature(null)}
@@ -72,7 +71,7 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
 
                             {/* Left Side: Visuals */}
                             <div
-                                className={`min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8 rounded-l-3xl overflow-hidden isolate`}
+                                className={`w-1/2 shrink-0 grow-0 min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8 rounded-l-3xl overflow-hidden`}
                             >
                                 <div className="flex flex-col items-center">
                                     <selectedFeature.icon size={96} className="text-white drop-shadow-2xl mb-6" />
@@ -81,7 +80,7 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             </div>
 
                             {/* Right Side: Details */}
-                            <div className="p-8 md:p-12 flex flex-col justify-center overflow-hidden isolate relative bg-[#1a1a1a]">
+                            <div className="w-1/2 shrink-0 grow-0 p-8 md:p-12 flex flex-col justify-center overflow-hidden bg-[#1a1a1a]">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
