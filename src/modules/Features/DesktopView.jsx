@@ -61,7 +61,7 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             exit={{ scale: 0.9, opacity: 0 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                             className="relative w-full max-w-4xl bg-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl z-10 border border-white/10"
-                            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
+                            style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)' }}
                         >
                             <button
                                 onClick={() => setSelectedFeature(null)}
@@ -72,8 +72,7 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
 
                             {/* Left Side: Visuals */}
                             <div
-                                className={`min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8`}
-                                style={{ borderRadius: '1.5rem 0 0 1.5rem' }}
+                                className={`min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8 rounded-l-3xl overflow-hidden`}
                             >
                                 <motion.div
                                     initial={{ scale: 0.8, opacity: 0 }}
