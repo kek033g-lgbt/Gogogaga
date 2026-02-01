@@ -62,7 +62,8 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                            className="relative w-full max-w-4xl bg-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row z-10 border border-white/10"
+                            className="relative w-full max-w-4xl bg-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl z-10 border border-white/10"
+                            style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
                         >
                             <button
                                 onClick={() => setSelectedFeature(null)}
@@ -73,7 +74,7 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
 
                             {/* Left Side: Visuals */}
                             <div
-                                className={`w-full md:w-1/2 shrink-0 min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8 relative`}
+                                className={`min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8`}
                                 style={{ borderRadius: '1.5rem 0 0 1.5rem' }}
                             >
                                 <motion.div
@@ -88,7 +89,7 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             </div>
 
                             {/* Right Side: Details */}
-                            <div className="w-full md:w-1/2 shrink-0 p-8 md:p-12 flex flex-col justify-center overflow-hidden">
+                            <div className="p-8 md:p-12 flex flex-col justify-center overflow-hidden">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
