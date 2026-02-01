@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Hero } from './components/Hero';
-import { FeatureCard } from './components/FeatureCard';
-import { ScreamerModal } from './components/ScreamerModal';
-import { Zap, Shield, Globe, Cpu } from 'lucide-react';
+import { Hero } from './modules/Hero';
+import { Features } from './modules/Features';
+import { Screamer } from './modules/Screamer';
+import { RickRoll } from './modules/RickRoll';
 
 function App() {
   const [isHorror, setIsHorror] = useState(false);
@@ -73,29 +73,6 @@ function App() {
     };
   }, [isHorror]);
 
-  const features = [
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Powered by Vite and optimized for maximum performance. Zero-latency interactions."
-    },
-    {
-      icon: Shield,
-      title: "Secure by Default",
-      description: "Enterprise-grade security protections baked into the core architecture."
-    },
-    {
-      icon: Globe,
-      title: "Global Scale",
-      description: "Edge-ready deployment ensuring low latency for users anywhere in the world."
-    },
-    {
-      icon: Cpu,
-      title: "AI Integrated",
-      description: "Native support for modern AI capabilities and real-time processing."
-    }
-  ];
-
   return (
     <>
       {/* Video Background */}
@@ -130,72 +107,10 @@ function App() {
           />
         )}
 
-        {/* Jumpscare Screamer */}
-        {/* Jumpscare Screamer - Modal Style */}
-        {/* Jumpscare Screamer - Modal Style */}
-        <ScreamerModal
-          isOpen={isScreamer}
-          onClose={() => setIsScreamer(false)}
-        />
-
-        {/* Fullscreen Rick Roll Overlay */}
-        {isRickRolled && (
-          <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.9)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 9999
-          }}>
-            <button
-              onClick={() => setIsRickRolled(false)}
-              style={{
-                position: 'absolute',
-                top: '20px',
-                right: '20px',
-                backgroundColor: 'white',
-                color: 'black',
-                padding: '10px 20px',
-                borderRadius: '25px',
-                fontWeight: 'bold',
-                border: 'none',
-                cursor: 'pointer',
-                zIndex: 10000
-              }}
-            >
-              Close X
-            </button>
-            <iframe
-              width="800"
-              height="450"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-              title="Rick Roll"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ maxWidth: '90vw', maxHeight: '80vh' }}
-            />
-          </div>
-        )}
-
-        <section className="section-padding" style={{ position: 'relative' }}>
-          <div className="container">
-            <div className="features-grid">
-              {features.map((feature, index) => (
-                <FeatureCard
-                  key={index}
-                  {...feature}
-                  delay={index * 0.1}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Modules */}
+        <Screamer isOpen={isScreamer} onClose={() => setIsScreamer(false)} />
+        <RickRoll isOpen={isRickRolled} onClose={() => setIsRickRolled(false)} />
+        <Features />
 
         <footer style={{
           padding: '3rem 0',

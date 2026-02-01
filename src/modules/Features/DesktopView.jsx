@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => {
+const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,5 +26,23 @@ export const FeatureCard = ({ icon: Icon, title, description, delay = 0 }) => {
                 </p>
             </div>
         </motion.div>
+    );
+};
+
+export const DesktopView = ({ features }) => {
+    return (
+        <section className="section-padding" style={{ position: 'relative' }}>
+            <div className="container">
+                <div className="features-grid">
+                    {features.map((feature, index) => (
+                        <FeatureCard
+                            key={index}
+                            {...feature}
+                            delay={index * 0.1}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 };

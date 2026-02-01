@@ -1,8 +1,4 @@
-import React from 'react';
-
-export function ScreamerModal({ isOpen, onClose }) {
-    if (!isOpen) return null;
-
+export const DesktopView = ({ onClose }) => {
     return (
         <div className="horror-modal-overlay">
             <div className="horror-modal">
@@ -26,4 +22,4 @@ export function ScreamerModal({ isOpen, onClose }) {
             </div>
         </div>
     );
-}
+};
