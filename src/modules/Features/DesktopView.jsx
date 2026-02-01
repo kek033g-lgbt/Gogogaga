@@ -71,14 +71,15 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             {/* Left Side: Visuals */}
                             <motion.div
                                 layoutId={`image-${selectedFeature.id}`}
-                                className={`w-full md:w-1/2 min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8 relative`}
+                                className={`w-full md:w-1/2 shrink-0 min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8 relative`}
+                                style={{ borderRadius: '1.5rem 0 0 1.5rem' }}
                             >
                                 <selectedFeature.icon size={96} className="text-white drop-shadow-2xl mb-6" />
                                 <h2 className="text-3xl font-bold text-white text-center">{selectedFeature.title}</h2>
                             </motion.div>
 
                             {/* Right Side: Details */}
-                            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                            <div className="w-full md:w-1/2 shrink-0 p-8 md:p-12 flex flex-col justify-center overflow-hidden">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
