@@ -58,7 +58,10 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
 
                         {/* Modal Content */}
                         <motion.div
-                            layoutId={`container-${selectedFeature.id}`}
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                             className="relative w-full max-w-4xl bg-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row z-10 border border-white/10"
                         >
                             <button
@@ -69,14 +72,20 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             </button>
 
                             {/* Left Side: Visuals */}
-                            <motion.div
-                                layoutId={`image-${selectedFeature.id}`}
+                            <div
                                 className={`w-full md:w-1/2 shrink-0 min-h-[300px] bg-gradient-to-br ${selectedFeature.color} flex flex-col items-center justify-center p-8 relative`}
                                 style={{ borderRadius: '1.5rem 0 0 1.5rem' }}
                             >
-                                <selectedFeature.icon size={96} className="text-white drop-shadow-2xl mb-6" />
-                                <h2 className="text-3xl font-bold text-white text-center">{selectedFeature.title}</h2>
-                            </motion.div>
+                                <motion.div
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="flex flex-col items-center"
+                                >
+                                    <selectedFeature.icon size={96} className="text-white drop-shadow-2xl mb-6" />
+                                    <h2 className="text-3xl font-bold text-white text-center">{selectedFeature.title}</h2>
+                                </motion.div>
+                            </div>
 
                             {/* Right Side: Details */}
                             <div className="w-full md:w-1/2 shrink-0 p-8 md:p-12 flex flex-col justify-center overflow-hidden">
