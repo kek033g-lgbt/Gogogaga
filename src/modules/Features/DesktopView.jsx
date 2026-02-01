@@ -17,7 +17,6 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                 <div className="flex justify-center gap-12 items-center flex-wrap">
                     {features.map((feature) => (
                         <motion.div
-                            layoutId={`container-${feature.id}`}
                             key={feature.id}
                             onClick={() => setSelectedFeature(feature)}
                             className="group cursor-pointer flex flex-col items-center gap-4 relative"
@@ -25,19 +24,18 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
                             whileTap={{ scale: 0.95 }}
                         >
                             {/* Circular Gradient Background / Image placeholder */}
-                            <motion.div
-                                layoutId={`image-${feature.id}`}
+                            <div
                                 className={`w-32 h-32 rounded-full bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden`}
                             >
                                 <feature.icon size={48} className="text-white drop-shadow-md z-10" />
                                 {/* Decorative glassy overlay */}
                                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </motion.div>
+                            </div>
 
-                            <motion.div layoutId={`text-content-${feature.id}`} className="text-center">
+                            <div className="text-center">
                                 <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{feature.title}</h3>
                                 <p className="text-xs text-dim">{feature.shortDescription}</p>
-                            </motion.div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
