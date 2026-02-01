@@ -79,7 +79,11 @@ export const DesktopView = ({ features, selectedFeature, setSelectedFeature }) =
 
                             {/* Right Side: Details */}
                             <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                                <motion.div layoutId={`text-content-${selectedFeature.id}`}>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.2, duration: 0.4 }}
+                                >
                                     <h3 className="text-xl font-semibold text-purple-400 mb-2 uppercase tracking-wider">Specifications</h3>
                                     <p className="text-dim text-lg leading-relaxed mb-6">
                                         {selectedFeature.description}

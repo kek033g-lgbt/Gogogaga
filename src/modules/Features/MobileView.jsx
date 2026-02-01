@@ -64,7 +64,11 @@ export const MobileView = ({ features, selectedFeature, setSelectedFeature }) =>
                             </motion.div>
 
                             <div className="p-6 overflow-y-auto">
-                                <motion.div layoutId={`text-content-${selectedFeature.id}`}>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                >
                                     <p className="text-dim text-base leading-relaxed mb-6">
                                         {selectedFeature.description}
                                     </p>
